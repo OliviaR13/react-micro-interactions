@@ -1,6 +1,6 @@
-# Bencho UI Components
+# React Micro Interactions
 
-> 47 个精致的 React + Framer Motion 微交互组件完整源码，来自 [bencho.dev](https://bencho.dev)
+> 47 个精致的 React + Framer Motion 微交互组件完整源码
 
 ![Components](https://img.shields.io/badge/components-47-blue)
 ![React](https://img.shields.io/badge/React-18+-61DAFB)
@@ -11,11 +11,13 @@
 
 ## 简介
 
-这是一份从 [Bencho](https://bencho.dev) 完整采集的交互式 UI 组件库，包含 **47 个可直接使用的 React 组件源码**。每个组件都附带：
+一个收集了 **47 个可直接使用的 React 微交互组件源码**的组件库。每个组件都附带：
 
 - 完整的 `.tsx` 源码（含详细设计注释）
 - `meta.json` — 安装依赖、引入用法、设计思路说明
 - 原作者的实现思路注释，帮助理解动画原理
+
+灵感与组件设计来自 [Bencho](https://bencho.dev)。
 
 ## 技术栈
 
@@ -31,10 +33,10 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/OliviaR13/bencho-ui-components.git
+git clone https://github.com/OliviaR13/react-micro-interactions.git
 
 # 2. 找到你需要的组件
-cd bencho-ui-components/assets/components/
+cd react-micro-interactions/assets/components/
 
 # 3. 读取 meta.json 查看安装和用法
 cat slide-confirm/meta.json
@@ -124,7 +126,7 @@ cat slide-confirm/meta.json
 ## 目录结构
 
 ```
-bencho-ui-components/
+react-micro-interactions/
 ├── SKILL.md                    # Skill 入口文档
 ├── README.md                   # 本文件
 └── assets/
@@ -160,13 +162,12 @@ import { SlideConfirm } from "./SlideConfirm";
 
 ## 致谢
 
-组件设计与源码来自 [Bencho](https://bencho.dev)，由 [Lorenzo Cabra](https://bencho.dev) 创作。
-本仓库仅为方便学习和查阅而整理归档。
+组件设计与源码灵感来自 [bencho.dev](https://bencho.dev)，由 Lorenzo Cabra 创作。
+本仓库为方便学习和查阅而整理归档。
 
 ## License
 
-组件源码以 **MIT License** 发布，版权归 [Lorenzo Cabra](https://bencho.dev) 所有。
+组件源码以 **MIT License** 发布，版权归 Lorenzo Cabra 所有。
 详见 [LICENSE](LICENSE) 文件。
 
-> "Bencho" 名称和 logo 为 Lorenzo Cabra 的商标，不受本软件许可证覆盖。
-> 组件中的示例图片（如加密货币图标）各有其原始版权，商用时请替换为自有素材。
+> 组件中的示例图片（如加密货币图标、国旗）各有其原始版权，商用时请替换为自有素材。
