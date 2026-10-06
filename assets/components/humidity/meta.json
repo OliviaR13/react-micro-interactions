@@ -1,0 +1,9 @@
+{
+  "name": "Humidity 湿度指示器",
+  "slug": "humidity",
+  "url": "https://bencho.dev/blocks/humidity",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Humidity } from \"./Humidity\";\nimport \"./Humidity.css\";\n\n<Humidity\n  ticks={60}\n  sweep={300}\n  wave={2.6}\n/>",
+  "notes": "/* figma 155:13094 — geometry is the spec, frost is by eye */\n.gcard {\n  width: 316px;\n  height: 316px;\n  border-radius: 16px;\n  background: rgba(255, 255, 255, 0.6);\n}\n\n/* The band: 60 ticks over 300deg, leaving\n   60deg of gap at the bottom. Each tick is placed\n   from its own index, so the count is the only thing that\n   changes when the band gets finer. */\n.hwheel-tick {\n  --start: 120deg;\n  --sweep: 300deg;\n  --step: calc(var(--sweep) / 59);\n  rotate: calc(var(--start) + var(--step) * var(--i));\n}\n\n/* the lit ticks carry a travelling wave whose amplitude\n   scales with the reading — at 0 the ring is a static gauge,\n   and this is the number that decides whether it looks\n   alive */\n--wave-amp: calc(1 + var(--reading) * 2.6);\n\n/* title 16px at 16.04 / 21.5 */\n/* chip 70 x 31, radius 8, #f4f4f4 */\n/* note in DM Mono 12px at 30% */\n\n/* #hglass-dispersion is feTurbulence driving three\n   feDisplacementMap passes at 34 / 24 / 13, one per colour\n   channel, recombined with screen blends. different channels\n   bending by different amounts is the chromatic fringing. */",
+  "source_file": "humidity.tsx"
+}

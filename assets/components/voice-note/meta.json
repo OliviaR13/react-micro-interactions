@@ -1,0 +1,9 @@
+{
+  "name": "Voice note 语音笔记",
+  "slug": "voice-note",
+  "url": "https://bencho.dev/blocks/voice-note",
+  "install": "npm install lucide-react",
+  "usage": "import { VoiceNote } from \"./VoiceNote\";\nimport \"./VoiceNote.css\";\n\n<VoiceNote\n  bars={28}\n  gain={60}\n  bounce={40}\n  corner={28}\n/>",
+  "notes": "/* THE PLAYHEAD IS ONE VARIABLE. Each bar lights itself\n   once progress has passed its index — no render per frame. */\n.bar { opacity: clamp(.3, calc((var(--prog) * var(--n) - var(--i)) * 99), 1); }\n\n/* slide left to throw it away */\npull = clamp((x0 - x) / 90, 0, 1);\nif (pull >= 1) cancel();\n\n/* the pill opens on a curve whose y1 past 1 is the bounce */\n.pill { transition: width 460ms cubic-bezier(.3, var(--ov), .4, 1); }",
+  "source_file": "voice-note.tsx"
+}

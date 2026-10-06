@@ -1,0 +1,9 @@
+{
+  "name": "One-time code 一次性验证码",
+  "slug": "one-time-code",
+  "url": "https://bencho.dev/blocks/one-time-code",
+  "install": "npm install lucide-react",
+  "usage": "import { Otp } from \"./Otp\";\nimport \"./Otp.css\";\n\n<Otp\n  length=\"4\"\n  answer=\"Accept\"\n  corner={12}\n/>",
+  "notes": "/* SIX CELLS, ONE FIELD. One invisible input over the row;\n   the cells are drawn underneath, so paste, autofill and\n   backspace stay the browser's. */\n<input inputmode=\"numeric\" autocomplete=\"one-time-code\" maxlength=\"6\" />\n\n/* A RIGHT CODE FUSES. The cells sit under a blur-and-threshold\n   filter, too far apart for it to bridge them. Verifying slides\n   them to the middle while a capsule grows out of the same\n   point, and the filter joins them into one shape. */\nx = mix(i * (36 + 7), centre, ease(m));          /* m: 0 -> 1 over 560ms */\n.otp-goo { filter: url(#goo); }                   /* blur 3, alpha x24 */\n\n/* A WRONG ONE SHIVERS AND DRAINS: a decaying wave down the\n   row, then the digits fall out right to left. */\nx += 5 * exp(-t / 190) * sin(t * 2π * 10 + i * 0.55);\n\n/* and every digit rises into its cell out of a little blur */\n@keyframes otp-in { from { transform: translateY(45%) scale(.86); opacity: 0; filter: blur(3px); } }",
+  "source_file": "one-time-code.tsx"
+}

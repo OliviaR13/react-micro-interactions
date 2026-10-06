@@ -1,0 +1,9 @@
+{
+  "name": "Generate 生成按钮",
+  "slug": "generate",
+  "url": "https://bencho.dev/blocks/generate",
+  "install": "npm install lucide-react",
+  "usage": "import { Generate } from \"./Generate\";\nimport \"./Generate.css\";\n\n<Generate\n  pace={5}\n  ripple={50}\n  corner={18}\n/>",
+  "notes": "/* THE LARGE DECISIONS FIRST, THE FINE ONES LAST. One filter\n   on the print, three windows of the same clock. */\nconst shapes = smooth(0.1, 0.82, t);       /* blur 20 -> 1.6px, contrast 2.4 -> 1 */\nconst grain  = smooth(0.7, 1, t);          /* the halftone, through the print */\n\n/* heavily blurred and pushed hard in contrast, the flower is a\n   few clean glassy masses; as the blur lets go the petals find\n   their edges, and the grain is the last thing decided */\n<feTurbulence baseFrequency=\"0.006\" numOctaves=\"2\" />\n<feDisplacementMap scale={32 * ripple * (1 - t) ** 1.5} />   /* the liquid, stilling */\n<feGaussianBlur stdDeviation={blur} />\n<feFuncR type=\"linear\" slope={k} intercept={PAPER - PAPER * k} />\n\n/* contrast turns about the PAPER, not mid-grey — about 0.5 the\n   ground goes white and snaps back at the end */\nconst PAPER = 0.9;",
+  "source_file": "generate.tsx"
+}

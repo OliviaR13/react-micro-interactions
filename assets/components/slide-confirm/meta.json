@@ -1,0 +1,9 @@
+{
+  "name": "Slide to confirm 滑动确认",
+  "slug": "slide-confirm",
+  "url": "https://bencho.dev/blocks/slide-confirm",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { SlideConfirm } from \"./SlideConfirm\";\nimport \"./SlideConfirm.css\";\n\n<SlideConfirm\n  corner={28}\n  speed={50}\n  width={280}\n/>",
+  "notes": "/* The handle follows the finger exactly and the offset is\n   taken at the FIRST MOVE, never at the press. Deciding it on\n   pointerdown is what makes a slider teleport: a press away\n   from the handle sets the offset to the handle's own middle\n   and the first move jumps it the whole way in one frame. */\nconst move = (e) => {\n  const at = local(e.clientX);\n  if (grab === null) { grab = at - x.get(); return; }\n  x.set(clamp(at - grab, 0, TRAVEL));\n};\n\n/* And the commit is a MORPH, not a hand-over. The handle's\n   width and its offset move together and by the same amount,\n   so the right edge is stationary and the handle opens out\n   behind itself to fill the track it crossed. A scale would\n   have dragged the corner radius with it. */\nanimate(x, TRAVEL, spring);\nsetDone(true);          /* width: GRIP -> span - PAD * 2 */",
+  "source_file": "slide-confirm.tsx"
+}

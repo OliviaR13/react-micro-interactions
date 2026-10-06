@@ -1,0 +1,9 @@
+{
+  "name": "Particles 粒子效果",
+  "slug": "particles",
+  "url": "https://bencho.dev/blocks/particles",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Particles } from \"./Particles\";\nimport \"./Particles.css\";\n\n<Particles\n  shape=\"Circle\"\n  reach={80}\n  force={60}\n  grain=\"Fine\"\n/>",
+  "notes": "/* ONE SET OF DOTS, MANY SHAPES. Every shape is sampled to the\n   same number of points; changing shape only moves each dot's\n   home, paired by angle round the middle so the swarm sweeps\n   round into the new outline instead of crossing itself. */\nhomes = sample(shape, 720);\n\n/* the push: away from the pointer, strongest close in */\nd.v += away * (1 - dist / reach) ** 2 * force;\n\n/* home on a spring */\nd.v = (d.v + (d.home - d.p) * 0.05) * 0.84;\n\n/* press: a shockwave out to 200px, then the next shape */\nd.v += away * (1 - dist / 200) * 30;\n\n/* and a moving dot is drawn long along its path */\nctx.ellipse(x, y, r * s, r / sqrt(s), atan2(vy, vx));",
+  "source_file": "particles.tsx"
+}

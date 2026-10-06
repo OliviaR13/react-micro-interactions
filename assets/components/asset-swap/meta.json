@@ -1,0 +1,9 @@
+{
+  "name": "Asset swap",
+  "slug": "asset-swap",
+  "url": "https://bencho.dev/blocks/asset-swap",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { Swap } from \"./Swap\";\nimport \"./Swap.css\";\n\n<Swap\n  assets=\"Crypto\"\n  bounce={30}\n  corner={28}\n/>",
+  "notes": "/* ONLY THE DIRECTION CHANGES. The slabs and the coins stay put;\n   the arrow turns half round and the labels follow it — the slab\n   it leaves pays, the one it points at receives. */\nconst payer = turns % 2 ? 1 : 0;\nlabel = i === payer ? \"You pay\" : \"You receive\";\n\n/* counted up, never flipped, so a second press carries on round */\n<motion.button animate={{ rotate: turns * 180 }} transition={spring} />\n\n/* THE PICKER GROWS OUT OF THE PILL: one clip-path window, from\n   the pill's own measured box to the whole block and back */\ninitial={{ clipPath: \"inset(t r b l round pillH/2)\" }}\nanimate={{ clipPath: \"inset(0 0 0 0 round corner)\" }}",
+  "source_file": "asset-swap.tsx"
+}

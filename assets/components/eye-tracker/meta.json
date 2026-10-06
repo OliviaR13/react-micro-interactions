@@ -1,0 +1,9 @@
+{
+  "name": "Eye tracker 眼球追踪",
+  "slug": "eye-tracker",
+  "url": "https://bencho.dev/blocks/eye-tracker",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Watcher } from \"./Watcher\";\nimport \"./Watcher.css\";\n\n<Watcher\n  follow={60}\n  bounce={30}\n  size={100}\n  shape=\"Cube\"\n  eyes=\"Slant\"\n/>",
+  "notes": "/* THE EYES ARE ON THE BALL. Each eye is a point on the\n   sphere; the pointer turns the ball, and the eye heading for\n   the rim moves less and narrows — foreshortening is what makes\n   a flat circle read as round. */\nconst z0 = Math.sqrt(1 - x0 * x0 - y0 * y0);\nconst x1 = x0 * Math.cos(yaw) + z0 * Math.sin(yaw);\nconst z1 = -x0 * Math.sin(yaw) + z0 * Math.cos(yaw);\nconst y2 = y0 * Math.cos(pitch) - z1 * Math.sin(pitch);\nconst z2 = y0 * Math.sin(pitch) + z1 * Math.cos(pitch);\neye.setAttribute(\"transform\",\n  `translate(${50 + x1 * R} ${50 + y2 * R}) scale(${0.35 + 0.65 * z2} 1)`);",
+  "source_file": "eye-tracker.tsx"
+}

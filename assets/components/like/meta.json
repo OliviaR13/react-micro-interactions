@@ -1,0 +1,9 @@
+{
+  "name": "Like 点赞按钮",
+  "slug": "like",
+  "url": "https://bencho.dev/blocks/like",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { Like } from \"./Like\";\nimport \"./Like.css\";\n\n<Like\n  effect=\"Bloom\"\n  burst={50}\n  color=\"Red\"\n  corner={22}\n/>",
+  "notes": "/* ONLY THE DIGITS THAT CHANGE ROLL. Each digit is keyed by its\n   place and its value, so 1,299 → 1,300 turns three wheels, each a\n   beat after the one to its right, the way a carry travels. */\n<AnimatePresence mode=\"popLayout\">\n  <motion.span key={digit}\n    initial={{ y: up ? \"100%\" : \"-100%\" }} animate={{ y: 0 }}\n    exit={{ y: up ? \"-100%\" : \"100%\" }}\n    transition={{ delay: place * 0.04 }} />\n</AnimatePresence>\n\n/* the heart: squeeze, swell past its size, settle */\n/* the like: the heart vanishes, a disc blooms and hollows into\n   a ring (a border as wide as the radius, going to 0), seven pairs\n   of confetti fly off it, and the heart springs back past its size */\n@keyframes bloom { 40% { scale: 1; border-width: 17px } 100% { scale: 1.12; border-width: 0 } }",
+  "source_file": "like.tsx"
+}

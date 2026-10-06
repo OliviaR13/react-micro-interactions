@@ -1,0 +1,9 @@
+{
+  "name": "Drag stepper 步进器",
+  "slug": "stepper",
+  "url": "https://bencho.dev/blocks/stepper",
+  "install": "npm install lucide-react",
+  "usage": "import { Stepper } from \"./Stepper\";\nimport \"./Stepper.css\";\n\n<Stepper />",
+  "notes": "/* Tap for one, hold to sweep. A stepper is precise and\n   slow, a slider is fast and vague, and almost every product\n   picks one and makes the other job painful. This is both on\n   the same control, chosen by how long you hold — so the\n   coarse move never costs you the fine one. */\nconst press = (dir) => (e) => {\n  origin = { x: e.clientX, v };\n  timer = setTimeout(() => setSweeping(true), 260);\n};\n\nconst lift = () => {\n  clearTimeout(timer);\n  if (!sweeping) setV((n) => n + dir);   // it was a tap\n  setSweeping(false);\n};\n\n/* the sweep is proportional to how wide the control is, so it\n   feels the same at any size */\nsetV(origin.v + ((e.clientX - origin.x) / railWidth) * 100);",
+  "source_file": "stepper.tsx"
+}

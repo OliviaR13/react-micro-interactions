@@ -1,0 +1,9 @@
+{
+  "name": "Label input 标签输入框",
+  "slug": "label-input",
+  "url": "https://bencho.dev/blocks/label-input",
+  "install": "npm install lucide-react",
+  "usage": "import { LabelInput } from \"./LabelInput\";\nimport \"./LabelInput.css\";\n\n<LabelInput\n  field=\"Email\"\n  corner={14}\n/>",
+  "notes": "/* ONE THING MOVES. The outline is always whole; focus only\n   darkens it in place and parts the top line under the label,\n   from its middle outward. */\n.lbi-ring path { stroke: rgba(ink, .18); stroke-width: 1; }\n.lbi[data-focus] .lbi-ring path { stroke: var(--ink); stroke-width: 1.5; }\n\n/* the gap: two halves from the middle to each side, retracted\n   by a negative dash offset */\n.lbi-gap { stroke-dasharray: 1 2; transition: stroke-dashoffset 320ms; }\n.lbi[data-up] .lbi-gap { stroke-dashoffset: -1; }\n\n/* the label lifts into the top edge, a hop running along it */\n.lbi[data-up] .lbi-label { transform: translateY(-50%) translateY(-26px) scale(.78); }\n@keyframes hop { 38% { transform: translateY(-3px); } }",
+  "source_file": "label-input.tsx"
+}

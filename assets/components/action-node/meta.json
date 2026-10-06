@@ -1,0 +1,9 @@
+{
+  "name": "Action node 动作节点",
+  "slug": "action-node",
+  "url": "https://bencho.dev/blocks/action-node",
+  "install": "npm install lucide-react",
+  "usage": "import { ActionNode } from \"./ActionNode\";\nimport \"./ActionNode.css\";\n\n<ActionNode\n  bounce={20}\n  stagger={55}\n  count={4}\n  corner={20}\n/>",
+  "notes": "/* Every button is struck from ONE point: the card's top-right\n   corner. The fan is an arc drawn from it, so the angle is the\n   only thing that separates one button from the next and the\n   distance is the only thing that animates. */\n.nod-fan { position: absolute; width: 0; height: 0; }\n\n/* the anchor is a POINT, so each button's own centre goes on\n   it first and the travel is measured from there */\n.nod-act {\n  position: absolute;\n  top: 0; left: 0;\n  margin-top: -14px;\n  margin-left: -14px;\n}\n\n/* and in the component, per button, driven by one spring each.\n   The circle is centred 26px INSIDE the corner rather than on\n   it, which is what lets the radius be big enough to space\n   four buttons while still passing close to both edges — so\n   they ride round the corner's curve rather than standing off\n   its point, and the angular step can be a constant:\n\n     const rho = 26 + gap + 14;          // inset, air, radius\n     const deg = 45 + 43 * (n - 1) / 2 - 43 * i;\n     const d   = rho * (spring / 100);\n\n     translate: `${Math.cos(deg * Math.PI / 180) * d}px\n                 ${-Math.sin(deg * Math.PI / 180) * d}px`\n     scale:     0.35 + 0.65 * Math.min(u, 1)\n\n   Nothing in CSS transitions any of those three. The spring\n   owns position, size and opacity together; a transition on\n   top of it would be two animations arguing over one\n   property. */",
+  "source_file": "action-node.tsx"
+}

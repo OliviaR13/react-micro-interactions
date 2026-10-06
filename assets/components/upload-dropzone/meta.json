@@ -1,0 +1,9 @@
+{
+  "name": "Upload dropzone 上传拖放区",
+  "slug": "upload-dropzone",
+  "url": "https://bencho.dev/blocks/upload-dropzone",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { Upload } from \"./Upload\";\nimport \"./Upload.css\";\n\n<Upload\n  speed={50}\n  bounce={40}\n  corner={16}\n/>",
+  "notes": "/* THE BOX INHALES. A file held over it is answered before it\n   is let go: a touch bigger, the dashed edge in the signal\n   colour and marching, the arrow lifting toward the hand. */\n.zone[data-over] { scale: 1.03; }\n.zone[data-over] rect { stroke: var(--signal); animation: march 700ms linear infinite; }\n@keyframes march { to { stroke-dashoffset: -22; } }\n\n/* the files are part of the block: an ordinary pointer drag,\n   hit-tested against the box on every move */\nover = inside(zone, pointer) && idle;\n\n/* the bar: uneven on purpose — a bar that climbs at a steady\n   rate reads as a timer, not an upload */\np += (dt / secs) * (0.4 + Math.random() * 1.2);",
+  "source_file": "upload-dropzone.tsx"
+}

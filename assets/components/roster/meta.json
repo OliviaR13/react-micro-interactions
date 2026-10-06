@@ -1,0 +1,9 @@
+{
+  "name": "Selection list 选择列表",
+  "slug": "roster",
+  "url": "https://bencho.dev/blocks/roster",
+  "install": "npm install framer-motion liquid-gooey",
+  "usage": "import { Roster } from \"./Roster\";\nimport \"./Roster.css\";\n\n<Roster\n  rows=\"3\"\n  corner={20}\n/>",
+  "notes": "/* selection lives in a Set so order of clicks never\n   leaks into the rendered order */\nconst [picked, setPicked] = useState<Set<string>>(new Set());\n\nconst toggle = (id: string) =>\n  setPicked((s) => {\n    const next = new Set(s);\n    next.has(id) ? next.delete(id) : next.add(id);\n    return next;\n  });",
+  "source_file": "roster.tsx"
+}

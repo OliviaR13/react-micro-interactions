@@ -1,0 +1,9 @@
+{
+  "name": "Time scrubber 时间拖拽条",
+  "slug": "time-scrubber",
+  "url": "https://bencho.dev/blocks/time-scrubber",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Scrub } from \"./Scrub\";\nimport \"./Scrub.css\";\n\n<Scrub\n  step=\"15\"\n  momentum={50}\n  format=\"12h\"\n  corner={20}\n/>",
+  "notes": "/* ONE SPRING FOR THE THROW AND THE SNAP. On release, decide\n   where it lands — where it would coast to, rounded to the step —\n   and let one spring carry it there, starting at the hand's own\n   speed. A flick coasts, a slow release just settles. */\nconst land = Math.round((pos + velocity * carry) / step) * step;\nv += (land - pos) * 0.045;  v *= 0.82;  pos += v;\n\n/* a dial seen from the front: ticks fall away in height and ink */\nconst f = 1 - (Math.abs(x) / HALF) ** 2;\ntick.style.transform = `translateX(${x}px) scaleY(${0.55 + 0.45 * f})`;\ntick.style.opacity = 0.18 + 0.82 * f;",
+  "source_file": "time-scrubber.tsx"
+}

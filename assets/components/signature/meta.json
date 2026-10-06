@@ -1,0 +1,9 @@
+{
+  "name": "Signature pad 签名板",
+  "slug": "signature",
+  "url": "https://bencho.dev/blocks/signature",
+  "install": "npm install lucide-react",
+  "usage": "import { Signature } from \"./Signature\";\nimport \"./Signature.css\";\n\n<Signature\n  pen={50}\n  smooth={50}\n  ink=\"Black\"\n  rewind={50}\n  corner={16}\n/>",
+  "notes": "/* THE NIB. Fast is thin, slow pools, and the width eases so\n   one quick frame cannot notch the line. */\nconst v = dist / dt;                          /* px per ms */\nconst target = thick - (thick - thin) * clamp(v / 1.6, 0, 1);\nw += (target - w) * 0.35;\n\n/* each segment is its own curve through the midpoints */\n<path d=\"M{start} Q{point} {mid}\" stroke-width={w} />\n\n/* CLEAR REWINDS: un-draw, last point first */\ncut = total * (1 - ease(k));",
+  "source_file": "signature.tsx"
+}

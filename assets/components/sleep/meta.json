@@ -1,0 +1,9 @@
+{
+  "name": "Sleep 睡眠指示器",
+  "slug": "sleep",
+  "url": "https://bencho.dev/blocks/sleep",
+  "install": "npm install framer-motion liquid-gooey",
+  "usage": "import { Sleep } from \"./Sleep\";\nimport \"./Sleep.css\";\n\n<Sleep\n  snap=\"15\"\n  density={48}\n  reach={56}\n/>",
+  "notes": "/* angles wrap, so the span is measured the short way\n   round and both handles are free to cross midnight */\nconst span = ((end - start) + 360) % 360;\n\n/* handle position on the arc */\nconst x = cx + r * Math.cos((angle - 90) * Math.PI / 180);\nconst y = cy + r * Math.sin((angle - 90) * Math.PI / 180);",
+  "source_file": "sleep.tsx"
+}

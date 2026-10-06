@@ -1,0 +1,9 @@
+{
+  "name": "Dynamic island 灵动岛",
+  "slug": "dynamic-island",
+  "url": "https://bencho.dev/blocks/dynamic-island",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { Island } from \"./Island\";\nimport \"./Island.css\";\n\n<Island\n  activity=\"Timer\"\n  bounce={40}\n  tone=\"Black\"\n/>",
+  "notes": "/* ONE SPRING FOR THE SHAPE. Width, height and corner move\n   together, anchored at the top edge, so the pill grows as one\n   object rather than a box whose corners catch up later. */\n<motion.div\n  animate={{ width: open ? 332 : 150, height: open ? 76 : 36,\n             borderRadius: open ? 38 : 18 }}\n  transition={{ type: \"spring\", stiffness: 380, damping: 28 }} />\n\n/* The CONTENT does not morph with it: the compact row and the\n   open card crossfade through a little blur and scale, the old\n   one leaving a beat before the new one arrives. */\ninitial={{ opacity: 0, scale: 0.92, filter: \"blur(6px)\" }}\nanimate={{ opacity: 1, scale: 1, filter: \"blur(0px)\" }}",
+  "source_file": "dynamic-island.tsx"
+}

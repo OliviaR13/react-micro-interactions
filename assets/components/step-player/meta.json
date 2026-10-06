@@ -1,0 +1,9 @@
+{
+  "name": "Step player 步骤播放器",
+  "slug": "step-player",
+  "url": "https://bencho.dev/blocks/step-player",
+  "install": "# nothing to install beyond React",
+  "usage": "import { StepPlayer } from \"./StepPlayer\";\nimport \"./StepPlayer.css\";\n\n<StepPlayer\n  steps={5}\n  pace={3}\n  wake={100}\n/>",
+  "notes": "/* EVERY DOT IS A PILL WITH TWO EDGES. The current step is\n   the dot whose slot is wide; changing step changes two slot\n   widths and every edge eases to its new place. */\nconst slot = (i) => (i === step ? 36 : 8);\nedge.x = mix(from, to, easeOut(t / 520));   /* leaves at speed: no stall after a full bar */\n\n/* THE WAKE. The dots the bar crossed stand up and settle in\n   the order it crossed them, and the landing bar answers last.\n   Wake is how far back from the landing it reaches; at 0 only\n   the dot beside it moves and the landing gives a squash. */\nconst reach = 1 + round(wake * 7);\nconst self  = mix(-0.7, 0.3, wake);           /* squash .. lift */\n.spl-dot { transform: scaleY(1 + sin(PI * u) * 0.34 * share); }",
+  "source_file": "step-player.tsx"
+}

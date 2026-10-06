@@ -1,0 +1,9 @@
+{
+  "name": "Heat map 热力图",
+  "slug": "heat-word",
+  "url": "https://bencho.dev/blocks/heat-word",
+  "install": "# nothing to install beyond React",
+  "usage": "import { HeatWord } from \"./HeatWord\";\nimport \"./HeatWord.css\";\n\n<HeatWord\n  heat={60}\n  soft={50}\n  area={50}\n  colors=\"Neon\"\n  shape=\"Dots\"\n/>",
+  "notes": "/* A FIELD, THEN A PALETTE. The word, blurred, is a grey field;\n   the cursor adds heat to it; every pixel is looked up in a table\n   from deep navy (the core) to a pink rim (the edge). Strokes that\n   overlap in the field fuse, so the heat runs them together. */\ng.shadowBlur = soft; g.fillText(word, x - off, y);   /* the blur */\ng.globalCompositeOperation = \"lighter\";              /* the heat */\ng.fillStyle = radial(cursor, white → clear);\nfor (px) out[px] = LUT[field[px]];                   /* the colour */",
+  "source_file": "heat-word.tsx"
+}

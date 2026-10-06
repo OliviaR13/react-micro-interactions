@@ -1,0 +1,9 @@
+{
+  "name": "Progress ticks 进度刻度",
+  "slug": "progress",
+  "url": "https://bencho.dev/blocks/progress",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Progress } from \"./Progress\";\nimport \"./Progress.css\";\n\n<Progress />",
+  "notes": "/* dark cards stay solid. no frost, no edge highlight,\n   they are a different material to the glass. */\nbackground: #0e0f11;\nborder-radius: 20px;\ncolor: #f2f1ee;\nbox-shadow: none;",
+  "source_file": "progress.tsx"
+}

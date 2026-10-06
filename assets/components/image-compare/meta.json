@@ -1,0 +1,9 @@
+{
+  "name": "Image compare 图片对比",
+  "slug": "image-compare",
+  "url": "https://bencho.dev/blocks/image-compare",
+  "install": "# nothing to install beyond React",
+  "usage": "import { Compare } from \"./Compare\";\nimport \"./Compare.css\";\n\n<Compare\n  labels\n  corner={20}\n/>",
+  "notes": "/* TWO PICTURES, ONE FRAME. The x-ray and the colour photo are the\n   same scene at the same size, so the halves line up exactly. */\n\n/* the line is jelly: its ends chase the knob on a soft spring,\n   and the picture is cut along the same curve */\nends.v += ((x - ends.x) * 620 - ends.v * 44) * dt;\nclip-path: path(\"M0 0 L{x-b} 0 Q{x+b} {h/2} {x-b} {h} L0 {h} Z\");",
+  "source_file": "image-compare.tsx"
+}

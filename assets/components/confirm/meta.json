@@ -1,0 +1,9 @@
+{
+  "name": "Inline confirm 内联确认",
+  "slug": "confirm",
+  "url": "https://bencho.dev/blocks/confirm",
+  "install": "npm install framer-motion lucide-react",
+  "usage": "import { Confirm } from \"./Confirm\";\nimport \"./Confirm.css\";\n\n<Confirm\n  corner={22}\n/>",
+  "notes": "/* The button becomes its own dialog. Nothing opens over the\n   page, nothing shifts around it, and the choice stays under\n   the cursor that asked for it — a modal moves your attention\n   somewhere else to answer a question you just asked here.\n\n   Undo lives in the same footprint too, on a timer, so the\n   destructive path never needs a toast either. */\n\n/* ONE PRESS. No confirmation step: it deletes at once and the\n   same pill springs wide to say so and offer Undo — an undo\n   that is right there asks only of the people who changed\n   their mind. */\nidle: [112]  \"Delete\"\ndone: [206]  \"Deleted · Undo\"   out with a little give, back firmly\n\n/* how long undo is still on offer */\n@keyframes burn { from { width: 100%; } to { width: 0; } }",
+  "source_file": "confirm.tsx"
+}

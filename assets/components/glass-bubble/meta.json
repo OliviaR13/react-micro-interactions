@@ -1,0 +1,9 @@
+{
+  "name": "Glass bubble 玻璃气泡",
+  "slug": "glass-bubble",
+  "url": "https://bencho.dev/blocks/glass-bubble",
+  "install": "# nothing to install beyond React",
+  "usage": "import { LiquidGlass } from \"./LiquidGlass\";\nimport \"./LiquidGlass.css\";\n\n<LiquidGlass\n  size={180}\n  bend={60}\n  fringe={30}\n  corner={40}\n/>",
+  "notes": "/* A SHADER, NOT A FILTER. The photograph is a texture; every\n   pixel asks a signed distance function how far it is from the\n   ball's edge, so the bend, the rim light and the shadow all\n   follow the same edge — even while it stretches. */\nfloat d = sdf(p);                      /* < 0 inside the glass */\nfloat edge = pow(1.0 - clamp(-d / bevel, 0.0, 1.0), 2.4);\n\n/* the middle magnifies; the rim reads OUTWARD along the edge's\n   normal, gathering what is just outside it — which is what\n   a ball of glass on a table actually does */\nvec2 q = c + (p - c) / 1.1 + n * edge * bevel * 1.1 * bend;\n\n/* colour parts a hair at the rim */\ng.r = read(q + off * fringe).r;  g.b = read(q - off * fringe).b;\n\n/* a thin lit band inside the edge, bright where it faces the\n   light, a weaker catch on the far side, and a soft shadow */\ng += rim * (0.18 + 0.75 * max(dot(n, L), 0.0));",
+  "source_file": "glass-bubble.tsx"
+}

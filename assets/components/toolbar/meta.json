@@ -1,0 +1,9 @@
+{
+  "name": "Canvas toolbar 画布工具栏",
+  "slug": "toolbar",
+  "url": "https://bencho.dev/blocks/toolbar",
+  "install": "npm install lucide-react",
+  "usage": "import { Toolbar } from \"./Toolbar\";\nimport \"./Toolbar.css\";\n\n<Toolbar\n  corner={15}\n/>",
+  "notes": "/* The shape slot keeps whichever shape you last chose, so\n   the bar learns your habit instead of resetting to a default\n   every time. The small thing these get wrong most often. */\nconst [shape, setShape] = useState(SHAPES[0]);\nconst pick = (s) => { setShape(s); setTool(\"shape\"); };\n\n/* a corner wedge, the universal \"there is more here\" */\n.notch::after {\n  border-left: 5px solid transparent;\n  border-bottom: 5px solid var(--ink);\n  opacity: 0.4;\n}",
+  "source_file": "toolbar.tsx"
+}

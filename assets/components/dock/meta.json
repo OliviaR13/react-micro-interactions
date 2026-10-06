@@ -1,0 +1,9 @@
+{
+  "name": "Magnifying dock 悬浮坞",
+  "slug": "dock",
+  "url": "https://bencho.dev/blocks/dock",
+  "install": "npm install lucide-react",
+  "usage": "import { GlassDock } from \"./GlassDock\";\nimport \"./GlassDock.css\";\n\n<GlassDock\n  magnify={1.32}\n  spread={2}\n  lift={8}\n/>",
+  "notes": "/* Scaling a translucent tile over translucent glass looks\n   cheap, so the dock scales the glyph and has no tile behind\n   it at all. --d is the item's distance from the cursor, set\n   on each item in JS; everything else is here. */\n.gdock-glyph {\n  /* a raised cosine over the reach: 1 under the cursor, 0 at\n     the edge of it, and nothing at all past it */\n  --f: max(0, (1 + cos(180deg * var(--d) / 3)) / 2);\n  transform: translateY(calc(8px * var(--f) * -1))\n             scale(calc(1 + 1.32 * var(--f) - var(--f)));\n  transform-origin: 50% 100%;\n  transition: transform 220ms cubic-bezier(0.32, 0.72, 0.24, 1);\n}\n\n/* the glyph magnifies, not the button. Scaling the whole item\n   drags the running dot and the label along with it, and the\n   label ends up 15px further from the bar purely as a side\n   effect of the zoom. */\n.gdock-item { transform: none; }\n\n.gdock-tip { display: none; }",
+  "source_file": "dock.tsx"
+}
