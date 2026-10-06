@@ -160,9 +160,13 @@ import { SlideConfirm } from "./SlideConfirm";
 
 ## 致谢
 
-组件设计与源码来自 [Bencho](https://bencho.dev)，由 Lorenzo Cabra 创作。
+组件设计与源码来自 [Bencho](https://bencho.dev)，由 [Lorenzo Cabra](https://bencho.dev) 创作。
 本仓库仅为方便学习和查阅而整理归档。
 
 ## License
 
-源码版权归 [Bencho](https://bencho.dev) 原作者所有，使用时请遵循原始许可协议。
+组件源码以 **MIT License** 发布，版权归 [Lorenzo Cabra](https://bencho.dev) 所有。
+详见 [LICENSE](LICENSE) 文件。
+
+> "Bencho" 名称和 logo 为 Lorenzo Cabra 的商标，不受本软件许可证覆盖。
+> 组件中的示例图片（如加密货币图标）各有其原始版权，商用时请替换为自有素材。
