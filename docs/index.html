@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bencho UI Components — Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">BENCHO UI COMPONENTS</div>
+        <h1>Micro-interactions Playground</h1>
+        <p>基于 OliviaR13/bencho-ui-components 的交互式展示 Demo</p>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="切换主题">◐</button>
+    </header>
+
+    <nav class="filters" id="filters">
+      <button class="filter active" data-filter="all">All <span>12</span></button>
+      <button class="filter" data-filter="interactions">Interactions <span>4</span></button>
+      <button class="filter" data-filter="navigation">Navigation <span>2</span></button>
+      <button class="filter" data-filter="forms">Forms <span>2</span></button>
+      <button class="filter" data-filter="feedback">Feedback <span>2</span></button>
+      <button class="filter" data-filter="dashboard">Dashboard <span>2</span></button>
+    </nav>
+
+    <main class="grid" id="componentGrid">
+      <article class="card" data-category="interactions">
+        <div class="card-head"><div><b>Like</b><small>interactions</small></div><span class="tag">01</span></div>
+        <div class="preview center">
+          <button class="like-btn" id="likeBtn"><span>♡</span> Like <em>128</em></button>
+        </div>
+      </article>
+
+      <article class="card" data-category="interactions">
+        <div class="card-head"><div><b>Drag Ball</b><small>interactions</small></div><span class="tag">02</span></div>
+        <div class="preview">
+          <div class="drag-area" id="dragArea"><div class="ball" id="ball"></div><span>Drag me</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-category="interactions">
+        <div class="card-head"><div><b>Dynamic Island</b><small>interactions</small></div><span class="tag">03</span></div>
+        <div class="preview center">
+          <button class="island" id="island"><i></i><span>Now Playing</span><strong>Expand</strong></button>
+        </div>
+      </article>
+
+      <article class="card" data-category="interactions">
+        <div class="card-head"><div><b>Image Compare</b><small>interactions</small></div><span class="tag">04</span></div>
+        <div class="preview">
+          <div class="compare" id="compare">
+            <div class="compare-before"></div>
+            <div class="compare-after"></div>
+            <div class="divider"></div>
+            <input type="range" min="5" max="95" value="50" aria-label="对比位置">
+            <label>BEFORE <span>AFTER</span></label>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-category="navigation">
+        <div class="card-head"><div><b>Dock</b><small>navigation</small></div><span class="tag">05</span></div>
+        <div class="preview center">
+          <div class="dock">
+            <button>⌂</button><button>⌕</button><button class="selected">✦</button><button>♡</button><button>⚙</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-category="navigation">
+        <div class="card-head"><div><b>Icon Bar</b><small>navigation</small></div><span class="tag">06</span></div>
+        <div class="preview center">
+          <div class="iconbar">
+            <button title="Home">⌂</button><button title="Search">⌕</button><button title="Grid">▦</button><button title="Profile">●</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-category="forms">
+        <div class="card-head"><div><b>Label Input</b><small>forms</small></div><span class="tag">07</span></div>
+        <div class="preview">
+          <label class="floating">
+            <input placeholder=" " autocomplete="off">
+            <span>Your name</span>
+          </label>
+        </div>
+      </article>
+
+      <article class="card" data-category="forms">
+        <div class="card-head"><div><b>Checklist</b><small>forms</small></div><span class="tag">08</span></div>
+        <div class="preview checklist">
+          <label><input type="checkbox" checked> Ship component library</label>
+          <label><input type="checkbox"> Add package registry</label>
+          <label><input type="checkbox"> Publish documentation</label>
+        </div>
+      </article>
+
+      <article class="card" data-category="feedback">
+        <div class="card-head"><div><b>Confirm</b><small>feedback</small></div><span class="tag">09</span></div>
+        <div class="preview center">
+          <button class="primary" id="confirmBtn">Delete project</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="feedback">
+        <div class="card-head"><div><b>Generate</b><small>feedback</small></div><span class="tag">10</span></div>
+        <div class="preview center">
+          <button class="generate" id="generateBtn"><span>✦</span> Generate</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="dashboard">
+        <div class="card-head"><div><b>Humidity</b><small>dashboard</small></div><span class="tag">11</span></div>
+        <div class="preview center">
+          <div class="gauge"><strong>68%</strong><small>Humidity</small><div class="arc"></div></div>
+        </div>
+      </article>
+
+      <article class="card" data-category="dashboard">
+        <div class="card-head"><div><b>Heat Word</b><small>dashboard</small></div><span class="tag">12</span></div>
+        <div class="preview wordcloud">
+          <span>React</span><span>Motion</span><span>UI</span><span>Micro</span><span>Spring</span><span>Interaction</span>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <b>Confirm action</b>
+      <p>This is a demo interaction. No data will actually be deleted.</p>
+      <div><button id="cancelModal">Cancel</button><button class="danger" id="okModal">Delete</button></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
