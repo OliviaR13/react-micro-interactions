@@ -1,6 +1,8 @@
 # React Micro Interactions
 
-> 47 个精致的 React + Framer Motion 微交互组件完整源码
+> 47 polished React + Framer Motion micro-interaction components
+
+[English](#english) · [中文](#中文)
 
 ![Components](https://img.shields.io/badge/components-47-blue)
 ![React](https://img.shields.io/badge/React-18+-61DAFB)
@@ -8,6 +10,175 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11+-0055FF)
 
 ---
+
+<a id="english"></a>
+
+## Overview
+
+A collection of **47 ready-to-use React micro-interaction components**. Each component includes:
+
+- Complete `.tsx` source code (with detailed design comments)
+- `meta.json` — install dependencies, usage examples, design notes
+- Original author's implementation notes to help understand animation logic
+
+Inspired by components from [bencho.dev](https://bencho.dev).
+
+## Tech Stack
+
+| Tech | Purpose |
+|------|---------|
+| React 18+ | Component framework |
+| TypeScript | Type safety |
+| Framer Motion | Animation engine |
+| Lucide React | Icon library |
+| liquid-gooey | Liquid distortion effects |
+
+## Quick Start
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/OliviaR13/react-micro-interactions.git
+
+# 2. Browse components
+cd react-micro-interactions/assets/components/
+
+# 3. Check meta.json for install & usage
+cat slide-confirm/meta.json
+
+# 4. Copy the .tsx file into your project, install deps, done
+```
+
+## Component Categories
+
+### 🎯 Interactions (11)
+
+| Component | Description |
+|-----------|-------------|
+| `like` | Animated like button |
+| `magnet-select` | Magnetic selection picker |
+| `checklist` | Animated todo checklist |
+| `drag-ball` | Draggable ball |
+| `dock` | Magnifying hover dock |
+| `pull` | Mobile pull-to-refresh |
+| `slide-confirm` | Slide-to-confirm slider |
+| `confirm` | Inline expanding confirm button |
+| `stepper` | Drag-to-adjust stepper |
+| `liq-arrange` | Draggable reorderable list |
+| `liq-toggle` | Liquid morph toggle switch |
+
+### 🧭 Navigation & Menus (5)
+
+| Component | Description |
+|-----------|-------------|
+| `radial` | Circular radial expand menu |
+| `liq-create` | Liquid create menu |
+| `command` | Command palette / search bar |
+| `toolbar` | Design-tool style toolbar |
+| `icon-bar` | Bottom icon navigation bar |
+
+### ✏️ Input & Forms (6)
+
+| Component | Description |
+|-----------|-------------|
+| `label-input` | Floating label input |
+| `seek` | Animated search box |
+| `one-time-code` | 6-digit OTP input |
+| `upload-dropzone` | File drag-and-drop upload zone |
+| `signature` | Handwriting signature pad |
+| `palette` | Color picker |
+
+### 📊 Dashboards & Data (10)
+
+| Component | Description |
+|-----------|-------------|
+| `asset-swap` | Crypto asset swap exchanger |
+| `sound` | Now playing card |
+| `heat-word` | Text heat map |
+| `humidity` | Circular humidity gauge |
+| `sleep` | Sleep quality ring chart |
+| `progress` | Tick-style progress bar |
+| `time-scrubber` | Video timeline scrubber |
+| `step-player` | Step-by-step player |
+| `slosh` | Liquid slosh slider |
+| `carousel` | Card carousel |
+
+### 🃏 Cards & Layouts (6)
+
+| Component | Description |
+|-----------|-------------|
+| `tilt` | 3D tilt-follow card |
+| `image-accordion` | Image expand accordion |
+| `image-compare` | Before/after comparison slider |
+| `glass-bubble` | Frosted glass bubble |
+| `dynamic-island` | iOS Dynamic Island style |
+| `aspect` | Aspect ratio selector |
+
+### 🔔 Feedback & States (9)
+
+| Component | Description |
+|-----------|-------------|
+| `toasts` | Toast notifications |
+| `generate` | AI generate button animation |
+| `particles` | Particle burst effect |
+| `voice-note` | Voice recording button UI |
+| `todo-tower` | Stacked todo cards |
+| `action-node` | Workflow node card |
+| `picker` | Avatar picker |
+| `roster` | Multi-select list |
+| `eye-tracker` | Eye cursor follower |
+
+## Project Structure
+
+```
+react-micro-interactions/
+├── SKILL.md                    # Skill entry doc
+├── README.md                   # This file
+└── assets/
+    └── components/              # Component library
+        ├── like/
+        │   ├── like.tsx        # Full component source
+        │   └── meta.json       # Install + usage + design notes
+        ├── slide-confirm/
+        │   ├── slide-confirm.tsx
+        │   └── meta.json
+        └── ... (47 components total)
+```
+
+## Usage Example
+
+Using `slide-confirm`:
+
+```bash
+# Install dependencies
+npm install framer-motion lucide-react
+```
+
+```tsx
+// Copy slide-confirm.tsx into your project
+import { SlideConfirm } from "./SlideConfirm";
+
+<SlideConfirm
+  corner={28}
+  speed={50}
+  width={280}
+/>
+```
+
+## Credits
+
+Component designs and source code inspired by [bencho.dev](https://bencho.dev), created by Lorenzo Cabra.
+This repository is a curated collection for learning and reference.
+
+## License
+
+Component source code is licensed under **MIT License**, copyright by Lorenzo Cabra.
+See [LICENSE](LICENSE) for details.
+
+> Sample images (crypto icons, flags) included in some components have their own original copyrights. Replace them with your own assets for commercial use.
+
+---
+
+<a id="中文"></a>
 
 ## 简介
 
@@ -17,7 +188,7 @@
 - `meta.json` — 安装依赖、引入用法、设计思路说明
 - 原作者的实现思路注释，帮助理解动画原理
 
-灵感与组件设计来自 [Bencho](https://bencho.dev)。
+灵感与组件设计来自 [bencho.dev](https://bencho.dev)。
 
 ## 技术栈
 
